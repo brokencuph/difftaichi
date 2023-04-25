@@ -376,6 +376,7 @@ def main():
         pickle.dump(ret, open('losses.pkl', 'wb'))
         print("Losses saved to losses.pkl")
     else:
+        forward('initial{}'.format(options.robot_id))
         optimize(toi=True, visualize=True)
         clear()
         forward('final{}'.format(options.robot_id))

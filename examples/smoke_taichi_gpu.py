@@ -192,6 +192,8 @@ def main():
             target[i, j] = target_img[i, j]
             smoke[0, i, j] = initial_smoke_img[i, j]
 
+    forward("smoke_initial")
+
     for opt in range(options.iters):
         t = time.time()
         with ti.ad.Tape(loss):
